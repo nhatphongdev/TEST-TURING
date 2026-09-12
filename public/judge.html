@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Test - Judge</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container judge-container">
+        <header class="chat-header">
+            <div class="logo">
+                <div class="pulse-dot"></div>
+                <h1>Giám Khảo</h1>
+            </div>
+            <div class="status-info" id="status-display">Đang kết nối...</div>
+        </header>
+
+        <main class="split-view">
+            <div class="chat-column">
+                <div class="column-header">Người A</div>
+                <ul id="messages-a" class="messages-list"></ul>
+            </div>
+            <div class="divider"></div>
+            <div class="chat-column">
+                <div class="column-header">Người B</div>
+                <ul id="messages-b" class="messages-list"></ul>
+            </div>
+        </main>
+
+        <footer class="chat-input-area">
+            <form id="judge-form">
+                <input id="m" autocomplete="off" placeholder="Hỏi một câu..." required disabled />
+                <button type="submit" id="send-btn" disabled>Gửi</button>
+            </form>
+        </footer>
+
+        <!-- Voting Overlay -->
+        <div id="voting-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>Bình Chọn</h2>
+                <p>Theo bạn, ai là AI (Máy)?</p>
+                <div class="vote-buttons">
+                    <button id="vote-a" class="btn btn-primary">A là AI</button>
+                    <button id="vote-b" class="btn btn-secondary">B là AI</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2 id="result-title">Kết quả</h2>
+                <p id="result-desc"></p>
+                <button id="restart-btn" class="btn btn-primary">Chơi lại</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="judge.js"></script>
+</body>
+</html>

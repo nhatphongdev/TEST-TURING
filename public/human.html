@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Test - Human</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="chat-header">
+            <div class="logo">
+                <button id="reveal-btn" class="btn btn-primary" style="margin-left: auto;">Công Bố</button>
+                <div class="pulse-dot"></div>
+                <h1>Người Trả Lời</h1>
+            </div>
+            <div class="status-info" id="status-display">Đang kết nối...</div>
+        </header>
+
+        <main class="chat-box" id="messages-container">
+            <ul id="messages" class="messages-list"></ul>
+        </main>
+
+        <footer class="chat-input-area">
+            <form id="human-form">
+                <input id="m" autocomplete="off" placeholder="Trả lời câu hỏi..." required disabled />
+                <button type="submit" id="send-btn" disabled>Gửi</button>
+            </form>
+        </footer>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="human.js"></script>
+</body>
+</html>
