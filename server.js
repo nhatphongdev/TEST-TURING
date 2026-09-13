@@ -42,7 +42,7 @@ let gameState = {
     humanSocket: null,
     status: 'waiting', // waiting, playing, voting, finished
     rounds: 0,
-    maxRounds: 5,
+    maxRounds: 1000,
     aiIsA: Math.random() > 0.5, // Randomly assign AI to A or B
     currentQuestion: null,
     currentAnswers: {
